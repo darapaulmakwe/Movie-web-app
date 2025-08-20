@@ -17,12 +17,16 @@ const API_OPTIONS = {
 }
 
 const App = () => {
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('') 
   const [searchTerm, setSearchTerm] = useState('')
-  const [error, setError] = useState('')
+  
   const [movies, setMovies] = useState([]) //container for movie data
-  const [trendingMovies,setTrendingMovies] = useState([])
+  const [error, setError] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('')
+  
+  const [trendingMovies,setTrendingMovies] = useState([])
+  
+  
 
   //Debounce search term to prevent making too many API requests
   // by waiting for the user to stop typing for half a second
